@@ -9,11 +9,11 @@ public class ThreadLifeStatus {
 	private static volatile boolean flag = true;
 	
 	public static void main(String[] args) throws InterruptedException {
-		new Thread(()-> { // jps��jstack����۲��߳�״̬
-			while(flag) { // �۲��߳�runnable״̬
+		new Thread(()-> { // jps和jstack命令观察线程状态
+			while(flag) { // 观察线程runnable状态
 			}
 			try {
-				TimeUnit.SECONDS.sleep(10); // �۲��߳�timed_waiting״̬
+				TimeUnit.SECONDS.sleep(10); // 观察线程timed_waiting状态
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -25,14 +25,14 @@ public class ThreadLifeStatus {
 					
 				}
 				try {
-					lockObj.wait(); // �۲��߳�waiting״̬
+					lockObj.wait(); // 观察线程waiting状态
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		},"Thread-1").start();
 		new Thread(()-> {
-			synchronized (lockObj) { // �۲��߳�block״̬
+			synchronized (lockObj) { // 观察线程block状态
 				while(flag) {
 					
 				}

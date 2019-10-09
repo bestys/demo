@@ -29,7 +29,7 @@ public class Server {
 //		dataInputStream.read(arr);
 		
 //		dataInputStream.close();
-		outputStream.write("ÇëÇó³É¹¦".getBytes());
+		outputStream.write("æˆ‘åˆæ¥äº†".getBytes());
 		outputStream.flush();
 		} catch (Exception e) {
 				e.printStackTrace();

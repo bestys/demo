@@ -1,10 +1,8 @@
 package com.ys.thread.socket;
 
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.InetSocketAddress;
 import java.net.Socket;
 
 public class Client {
@@ -12,7 +10,7 @@ public class Client {
 		Socket socket = new Socket("192.168.90.15",8080);
 //		socket.bind(new InetSocketAddress());
 		OutputStream outputStream = socket.getOutputStream();
-		outputStream.write("ÎÒÀ´ÁË".getBytes());
+		outputStream.write("æˆ‘æ¥äº†".getBytes());
 		outputStream.flush();
 		socket.shutdownOutput();
 		InputStream inputStream = socket.getInputStream();
